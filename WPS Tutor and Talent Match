@@ -1,0 +1,52 @@
+# Purpose: A simple script to "tutor" about the West Philippine Sea (WPS) dispute
+#          and simulate basic talent-matching for xAI roles. Shows Python basics
+#          for AI Tutor + Talent Engineer prep.
+
+# Import libraries
+import random
+
+# Function to explain WPS dispute (Tutor role vibe)
+def explain_wps():
+    print("Hello! Let's learn about the West Philippine Sea (WPS)!")
+    facts = [
+        "The WPS is part of the Philippines' sea and lies within the country's exclusive economic zone (EEZ).",
+        "In recent years, China's presence in the WPS has been observed and recorded.",
+        "China's activities in the WPS include, but are not limited to, unrestrained constant military and civilian naval activities,", 
+        "restricting Philippine fisherfolks' economic fishing activities, and a number of ramming incidents involving Philippine Coastguard",  
+        "and Navy vessels patrolling the area.",
+        "In 2016, an international court of the seas ruled that the West Philippine Sea is an area under the exclusive jurisdiction of the Philippines.", 
+        "All economic and naval activities are under the sovereignty of the Philippines."
+    ]
+    for fact in facts:
+        print(f"- {fact}")
+    print("Cool, right? Now, let's find someone to help fix this with AI!")
+
+# Function to simulate talent matching (Talent Engineer role vibe)
+def match_talent():
+    print("\nLet's find a hero for xAI!")
+    # Sample talent pool (skills: coding, ethics, data)
+    talents = [
+        {"name": "Jimda", "skills": ["Python", "Ethics"], "location": "Remote"},
+        {"name": "Alice", "skills": ["Rust", "Data"], "location": "US"},
+        {"name": "Grace", "skills": ["ML", "Teaching"], "location": "PH"},
+    ]
+    # Desired skills for xAI roles
+    desired_skills = ["Python", "Ethics", "ML"]  # Mix for tutor/engineer
+    best_match = None
+    best_score = 0
+    for talent in talents:
+        score = len(set(talent["skills"]) & set(desired_skills))  # Match count
+        if score > best_score and talent["location"] in ["Remote", "PH"]:
+            best_score = score
+            best_match = talent
+    if best_match:
+        print(f"Best match: {best_match['name']} from {best_match['location']}!")
+        print(f"Skills: {', '.join(best_match['skills'])}")
+        print("They'd be great for tutoring Grok or building justice bots!")
+    else:
+        print("No perfect match yet - let's keep looking!")
+
+# Run the script
+if __name__ == "__main__":
+    explain_wps()
+    match_talent()
